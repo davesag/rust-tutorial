@@ -2,6 +2,9 @@
 
 Just me [learning Rust](https://doc.rust-lang.org) by doing the tutorial exercises.
 
+* `develop` [![CircleCI](https://circleci.com/gh/davesag/rust-tutorial/tree/develop.svg?style=svg)](https://circleci.com/gh/davesag/rust-tutorial/tree/develop)
+* `master` [![CircleCI](https://circleci.com/gh/davesag/rust-tutorial/tree/master.svg?style=svg)](https://circleci.com/gh/davesag/rust-tutorial/tree/master)
+
 ## Getting started with Rust on macOS (with Homebrew)
 
 ### Install stuff
@@ -34,6 +37,12 @@ Now you can add dependencies to your project using
 
 instead of having to look up the speccific library version and manually edit the `Cargo.toml` file.
 
+Then add `rustfmt-preview` to your toolchain.
+
+    rustup component add rustfmt-preview
+
+Now you can run the rust code formatter (aka linting)
+
 ### Keep it up to date
 
     rustup update
@@ -65,6 +74,10 @@ Build and run the release version of the project
     cargo build --release
     cargo run --release
 
-Run tests
+Run tests (when there are tests to run)
 
     cargo test
+
+Linting
+
+    cargo fmt -- --write-mode=diff
